@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Bootstrap Material Sliders</title>
+        <!--<link href="bower_components/nouislider/src/jquery.nouislider.css" rel="stylesheet">-->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="dist/css/ripples.css" rel="stylesheet">
+        <link href="dist/css/material-wfont.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="colorpicker">
+            <div class="sliders" id="red"></div>
+            <div class="sliders" id="green"></div>
+            <div class="sliders" id="blue"></div>
+
+            <div class="result"></div>
+        </div>
+        <div class="bs-docs-section">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header">
+                        <h1 id="slider">Sliders <span style="font-size: 50%">(with noUiSlider)</span></h1>
+                    </div>
+                    <div class="bs-component">
+                        <div class="slider"></div>
+                        <div class="slider slider-success"></div>
+                        <div class="slider slider-material-pink"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="dist/js/ripples.min.js"></script>
+        <script src="dist/js/material.min.js"></script>
+
+
+        <script src="/bower_components/nouislider/distribute/jquery.nouislider.all.js"></script>
+        <!--<script src="//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>-->
+        <script>
+            function setColor(){
+
+                // Get the slider values,
+                // stick them together.
+                var color = 'rgb(' +
+                        $("#red").val() + ',' +
+                        $("#green").val() + ',' +
+                        $("#blue").val() + ')';
+
+                // Fill the color box.
+                $(".result").css({
+                    background: color,
+                    color: color
+                });
+            }
+
+            $(function() {
+                $(".slider").noUiSlider({
+                    start: 40,
+                    connect: 'lower',
+                    range: {
+                        min: 0,
+                        max: 100
+                    }
+                });
+
+                $('.sliders').noUiSlider({
+                    start: 127,
+                    connect: "lower",
+                    orientation: "vertical",
+                    range: {
+                        'min': 0,
+                        'max': 255
+                    },
+                    format: wNumb({
+                        decimals: 0
+                    })
+                });
+                // Bind the color changing function
+                // to the slide event.
+                $('.sliders').on('slide', setColor);
+            });
+        </script>
+    </body>
+</html>

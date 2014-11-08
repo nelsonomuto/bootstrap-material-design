@@ -11,16 +11,11 @@
     "dist/js/material.js"
   ],
   "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
     "test",
-    "screenshots",
-    "demo",
-    ".editorconfig",
-    ".gitignore",
-    ".jshintrc",
-    ".travis.yml",
-    "CONTRIBUTING.md",
-    "Gruntfile.json",
-    "index.html"
+    "tests"
   ],
   "keywords": [
     "material",
@@ -31,11 +26,7 @@
     "android"
   ],
   "license": "https://github.com/FezVrasta/bootstrap-material-design/blob/master/LICENSE.md",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+  "dependencies": {
+    "nouislider": "~7.0.9"
+  }
 }

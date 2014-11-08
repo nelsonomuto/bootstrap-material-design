@@ -161,7 +161,7 @@ module.exports = function(grunt) {
                     livereload: "<%= connect.options.livereload %>"
                 },
                 files: [
-                    "index.html",
+                    "*.html",
                     "dist/css/**/*.css",
                     "**/*.{png,jpg,jpeg,gif,webp,svg}"
                 ]
