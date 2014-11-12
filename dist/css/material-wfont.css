@@ -4245,13 +4245,6 @@ fieldset[disabled] .navbar .btn-link:focus {
 .noUi-horizontal {
   height: 10px;
 }
-.noUi-vertical {
-  height: 200px;
-  width: 10px;
-  margin: 5px 50px;
-  background: darkgray;
-  display: inline-block;
-}
 .noUi-horizontal .noUi-handle {
   box-sizing: border-box;
   width: 12px;
@@ -4299,6 +4292,13 @@ fieldset[disabled] .navbar .btn-link:focus {
   -webkit-transform: scale(2.5);
       -ms-transform: scale(2.5);
           transform: scale(2.5);
+}
+.noUi-vertical {
+  height: 200px;
+  width: 10px;
+  margin: 5px 50px;
+  background: darkgray;
+  display: inline-block;
 }
 [disabled].noUi-slider {
   opacity: 0.5;
